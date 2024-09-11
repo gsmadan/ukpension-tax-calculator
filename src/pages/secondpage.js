@@ -12,27 +12,28 @@ function SecondPage() {
   const [pensionsMasterData, setPensionsMasterData] = useState({
     AnnualPensionBenefits_CurrentFY: '',
     AnnualPensionBenefits_CurrentFYMinus1: '',
-    AnnualPensionBenefits_CurrentFYMinus2: '',
-    TaxableIncome_CurrentFY: '',
-    PrivatePensions_Flag: '',
-    PrivatePensionsWithdrawal_Flag: '',
-    PrivatePensionsWithdrawal_PotSize: '',
-    PrivatePensionsWithdrawal_Type: ''
+    AnnualPensionBenefits_CurrentFYMinus2: ''
+    // ,
+    // TaxableIncome_CurrentFY: '',
+    // PrivatePensions_Flag: '',
+    // PrivatePensionsWithdrawal_Flag: '',
+    // PrivatePensionsWithdrawal_PotSize: '',
+    // PrivatePensionsWithdrawal_Type: ''
   });
 
-  const [privatePensionsData, setPrivatePensionsData] = useState({
-    PensionProvider: '',
-    PolicyNumber: '',
-    PolicyStartDate: '',
-    PresentPotValue: '',
-    EmployerContr_CurrentFY: '',
-    EmployerContr_CurrentFYMinus1: '',
-    EmployerContr_CurrentFYMinus2: '',
-    EmployeeContr_CurrentFY: '',
-    EmployeeContr_CurrentFYMinus1: '',
-    EmployeeContr_CurrentFYMinus2: '',
-    WithdrawalFlag: ''
-  });
+  // const [privatePensionsData, setPrivatePensionsData] = useState({
+  //   PensionProvider: '',
+  //   PolicyNumber: '',
+  //   PolicyStartDate: '',
+  //   PresentPotValue: '',
+  //   EmployerContr_CurrentFY: '',
+  //   EmployerContr_CurrentFYMinus1: '',
+  //   EmployerContr_CurrentFYMinus2: '',
+  //   EmployeeContr_CurrentFY: '',
+  //   EmployeeContr_CurrentFYMinus1: '',
+  //   EmployeeContr_CurrentFYMinus2: '',
+  //   WithdrawalFlag: ''
+  // });
 
   const navigate = useNavigate();
   
@@ -44,18 +45,18 @@ function SecondPage() {
     });
   };
 
-  const handleChangePrivate = (e) => {
-    setPrivatePensionsData({
-      ...privatePensionsData,
-      [e.target.name]: e.target.value
-    });
-  };
+  // const handleChangePrivate = (e) => {
+  //   setPrivatePensionsData({
+  //     ...privatePensionsData,
+  //     [e.target.name]: e.target.value
+  //   });
+  // };
 
   const handleSubmit = async () => {
     try {
-      const masterResponse = await axios.post('http://localhost:8000/pensions_master/', pensionsMasterData);
-      // const privatePensionDataWithID = { ...privatePensionsData, ID: masterResponse.data.ID };
-      // await axios.post('http://localhost:8000/private_pensions/', privatePensionDataWithID);
+      console.log(pensionsMasterData); // Log the data you're sending to the backend
+      
+      await axios.post('http://localhost:8000/pensions_master/', pensionsMasterData);
       navigate('/third');
     } catch (error) {
       console.error('Error submitting data', error);
