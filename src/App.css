@@ -162,6 +162,16 @@
   padding: 15px 59px;
 }
 
+.input-box {
+
+  width: 250px; /* Adjust the width */
+  height: 40px; /* Adjust the height */
+  padding: 10px; /* Optional padding */
+  font-size: 16px; /* Font size adjustment */
+  box-sizing: border-box; /* Ensure padding doesn't affect total width/height */
+  border-style:dashed ;
+}
+
 /* thirdpage */
 .div-11 {
   background-color: #fff;
