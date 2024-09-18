@@ -79,6 +79,7 @@ function SecondPage() {
             name="AnnualPensionBenefits_CurrentFY"
             value={pensionsMasterData.AnnualPensionBenefits_CurrentFY}
             onChange={handleChangeMaster}
+            className="input-box"
           />
         </div>
         <div className="div-6">2022-2023</div>
@@ -90,6 +91,7 @@ function SecondPage() {
             name="AnnualPensionBenefits_CurrentFYMinus1"
             value={pensionsMasterData.AnnualPensionBenefits_CurrentFYMinus1}
             onChange={handleChangeMaster}
+            className="input-box"
           />
         </div>
         <div className="div-8">2021-2022</div>
@@ -101,6 +103,7 @@ function SecondPage() {
             name="AnnualPensionBenefits_CurrentFYMinus2"
             value={pensionsMasterData.AnnualPensionBenefits_CurrentFYMinus2}
             onChange={handleChangeMaster}
+            className="input-box"
           />
         </div>
         <div onClick={handleSubmit} 
